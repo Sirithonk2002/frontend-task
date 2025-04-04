@@ -339,20 +339,21 @@ export default function TasksPage() {
                                 : "bg-green-100"
                             }`}
                           >
-                          <div className="text-semixs text-gray-500 mt-2 text-right flex space-x-4">
-                            {task.start_date && (
-                              <p>
-                                <strong>Start Date:</strong>{" "}
-                                {new Date(task.start_date).toLocaleDateString("en-GB")}
-                              </p>
-                            )}
-                            {task.end_date && (
-                              <p>
-                                <strong>End Date:</strong>{" "}
-                                {new Date(task.end_date).toLocaleDateString("en-GB")}
-                              </p>
-                            )}
-                          </div>
+                            <div className="text-sm text-red-500 mt-2 text-right flex flex-col sm:flex-row sm:space-x-4">
+                              {task.start_date && (
+                                <p>
+                                  <strong>Start Date:</strong>{" "}
+                                  {new Date(task.start_date).toLocaleDateString("en-GB")}
+                                </p>
+                              )}
+                              {task.end_date && (
+                                <p>
+                                  <strong>End Date:</strong>{" "}
+                                  {new Date(task.end_date).toLocaleDateString("en-GB")}
+                                </p>
+                              )}
+                            </div>
+
                             <h3 className="font-bold text-lg text-gray-800">{task.title}</h3>
                             <p className="text-sm text-gray-600 mb-2">{task.description}</p>
                             <span
