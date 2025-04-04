@@ -339,7 +339,7 @@ export default function TasksPage() {
                                 : "bg-green-100"
                             }`}
                           >
-                            <div className="text-sm text-red-500 mt-2 text-right flex flex-col sm:flex-row sm:space-x-4">
+                            <div className="text-sm text-gray-500 mt-2 text-right flex flex-col sm:flex-row sm:space-x-4">
                               {task.start_date && (
                                 <p>
                                   <strong>Start Date:</strong>{" "}
