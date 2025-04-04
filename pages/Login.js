@@ -12,6 +12,8 @@ export default function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+
+    console.log("Backend URL: ", process.env.NEXT_PUBLIC_BACKEND_API_URL);
   
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL; 
   
