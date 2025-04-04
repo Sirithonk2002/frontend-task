@@ -263,14 +263,13 @@ export default function TasksPage() {
   };
 
   return (
-    <div
-        className="p-6 min-h-screen bg-cover bg-center"
+      <div
+        className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
         style={{
           background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",
-          backgroundSize: 'cover',  
-          backgroundPosition: 'center',  
-          height: '100vh',  
-          width: '100%',  
+          backgroundSize: "100% 100%", 
+          backgroundPosition: "center", 
+          backgroundRepeat: "no-repeat", 
         }}
       >
       <div className="flex justify-between items-center mb-8">
