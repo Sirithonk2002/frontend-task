@@ -36,10 +36,15 @@ export default function LoginPage() {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
-      style={{ background: "linear-gradient(to bottom right, #FF6666, #FFDAB9, #ffffff)" }}
-    >
+      <div
+        className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
+        style={{
+          background: "linear-gradient(to bottom right, #FF6666, #FFDAB9, #ffffff)",
+          backgroundSize: "100% 100%", 
+          backgroundPosition: "center", 
+          backgroundRepeat: "no-repeat", 
+        }}
+      >
       <form
         onSubmit={handleLogin}
         className="bg-white/90 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-3xl shadow-2xl max-w-md w-full space-y-6 border border-rose-200"
