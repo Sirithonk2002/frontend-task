@@ -15,7 +15,7 @@ export default function RegisterPage() {
     setError("");
     setSuccessMessage(""); 
   
-    const backendUrl = "https://backend-task-vuwz.onrender.com";  
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;  
     try {
       const res = await fetch(`${backendUrl}/users/register`, {  
         method: "POST",
