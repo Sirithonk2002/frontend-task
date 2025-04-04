@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL; 
+    const backendUrl = "https://backend-task-vuwz.onrender.com"; 
     
     try {
       const res = await fetch(`${backendUrl}/users/login`, {
