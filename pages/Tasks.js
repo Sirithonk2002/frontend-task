@@ -263,15 +263,12 @@ export default function TasksPage() {
   };
 
   return (
-      <div
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
-        style={{
-          background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",
-          backgroundSize: "100% 100%", 
-          backgroundPosition: "center", 
-          backgroundRepeat: "no-repeat", 
-        }}
-      >
+    <div
+      className="p-6 min-h-screen bg-cover bg-center"
+      style={{
+        background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",  
+      }}
+    >
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#330000]">
           Task Management
