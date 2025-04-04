@@ -13,11 +13,8 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL; 
-    console.log("Backend URL:", backendUrl);
-    
     try {
-      const res = await fetch(`${backendUrl}/users/login`, {
+      const res = await fetch("https://backend-task-6pav.onrender.com/users/login", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -57,16 +57,16 @@ export default function TasksPage() {
     const token = localStorage.getItem("token");
     if (token) {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/users/me`, {  
+        const res = await fetch("https://backend-task-6pav.onrender.com/users/me", {  
           method: "GET",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         });
-
+  
         if (!res.ok) throw new Error("Failed to fetch user data");
-
+  
         const data = await res.json();
         setCurrentUser(data);  
       } catch (err) {
@@ -74,20 +74,20 @@ export default function TasksPage() {
       }
     }
   };
-
+  
   useEffect(() => {
     getCurrentUser();
-
+  
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/users/users`, { 
+        const res = await fetch("https://backend-task-6pav.onrender.com/users/users", {  
           method: "GET",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        
+  
         if (!res.ok) throw new Error("Failed to fetch users");
   
         const data = await res.json();
@@ -103,7 +103,7 @@ export default function TasksPage() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/tasks`, {  
+        const res = await fetch("https://backend-task-6pav.onrender.com/tasks", {  
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -117,14 +117,15 @@ export default function TasksPage() {
         setError(err.message);
       }
     };
-
+  
     fetchTasks();
   }, []);
+  
 
   const handleAddTask = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/tasks`, {  
+      const res = await fetch("https://backend-task-6pav.onrender.com/tasks", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -159,7 +160,7 @@ export default function TasksPage() {
   
   const handleDeleteTask = async (id) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/tasks/${id}`, {  
+      const res = await fetch(`https://backend-task-6pav.onrender.com/tasks/${id}`, {  
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -189,7 +190,7 @@ export default function TasksPage() {
     );
   
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/tasks/${draggedTask.id}`, { 
+      const res = await fetch(`https://backend-task-6pav.onrender.com/tasks/${draggedTask.id}`, {  
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -221,7 +222,7 @@ export default function TasksPage() {
   const handleEditTask = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/tasks/${editTask.id}`, {  
+      const res = await fetch(`https://backend-task-6pav.onrender.com/tasks/${editTask.id}`, {  
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -245,7 +246,6 @@ export default function TasksPage() {
     }
   };
   
-
   const openEditModal = (task) => {
     setEditTask({ ...task }); 
     setIsEditModalOpen(true);

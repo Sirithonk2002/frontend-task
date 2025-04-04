@@ -15,9 +15,8 @@ export default function RegisterPage() {
     setError("");
     setSuccessMessage(""); 
   
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;  
     try {
-      const res = await fetch(`${backendUrl}/users/register`, {  
+      const res = await fetch("https://backend-task-6pav.onrender.com/users/register", {  
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +41,6 @@ export default function RegisterPage() {
     }
   };
   
-
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
