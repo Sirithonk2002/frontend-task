@@ -10,25 +10,26 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState(""); 
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (e) => {  
     e.preventDefault();
     setError("");
     setSuccessMessage(""); 
-
+  
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;  
     try {
-      const res = await fetch("https://backend-task-ra57.onrender.com/users/register", {
+      const res = await fetch(`${backendUrl}/users/register`, {  
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.detail || "Registration failed");
       }
-
+  
       const { access_token } = await res.json();
       localStorage.setItem("token", access_token);
       
@@ -40,19 +41,20 @@ export default function RegisterPage() {
       setError(err.message);
     }
   };
+  
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
       style={{
         background: "linear-gradient(to bottom right, #FF6633, #FFD1A9, #FFF8F2)",
       }}
     >
       <form
         onSubmit={handleRegister}
-        className="bg-white/90 backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-md w-full space-y-6 border border-orange-200"
+        className="bg-white/90 backdrop-blur-md p-8 sm:p-10 md:p-12 rounded-3xl shadow-2xl max-w-md w-full space-y-6 border border-orange-200"
       >
-        <h2 className="text-4xl font-extrabold text-center text-gray-800 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 tracking-tight">
           Create Account
         </h2>
 

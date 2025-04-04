@@ -9,26 +9,26 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-
+  
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL; 
+  
     try {
-      const res = await fetch("https://backend-task-ra57.onrender.com/users/login", {
+      const res = await fetch(`${backendUrl}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.detail || "Login failed");
       }
-
+  
       const { access_token } = await res.json();
       localStorage.setItem("token", access_token);
       router.push("/Tasks");
@@ -36,17 +36,19 @@ export default function LoginPage() {
       setError(err.message);
     }
   };
+  
+  
 
   return (
-      <div
-        className="min-h-screen flex items-center justify-center px-4"
-        style={{background: "linear-gradient(to bottom right, #FF6666, #FFDAB9, #ffffff)",}}
-      >
+    <div
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8"
+      style={{ background: "linear-gradient(to bottom right, #FF6666, #FFDAB9, #ffffff)" }}
+    >
       <form
         onSubmit={handleLogin}
-        className="bg-white/90 backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-md w-full space-y-6 border border-rose-200"
+        className="bg-white/90 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-3xl shadow-2xl max-w-md w-full space-y-6 border border-rose-200"
       >
-        <h2 className="text-4xl font-extrabold text-center text-gray-800 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 tracking-tight">
           Welcome Back
         </h2>
 
