@@ -264,7 +264,7 @@ export default function TasksPage() {
   
   return (
     <div
-        className="p-6 min-h-screen bg-cover bg-center sm:bg-fixed md:bg-fixed lg:bg-fixed"
+        className="p-6 min-h-screen bg-cover bg-center sm:bg-scroll md:bg-scroll lg:bg-scroll"
         style={{
           background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",	
         }}
