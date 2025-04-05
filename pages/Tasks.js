@@ -264,7 +264,7 @@ export default function TasksPage() {
 
   return (
     <div
-      className="p-6 min-h-screen bg-cover bg-center"
+      className="p-4 sm:p-6 min-h-screen w-full"
       style={{
         background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",  
       }}
@@ -398,7 +398,7 @@ export default function TasksPage() {
       {/* Add Task */}
       {isAddTaskModalOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md">
+          <div className="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md mx-4 max-h-screen overflow-y-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-700 tracking-tight mb-6">Add New Task</h2>
             <form onSubmit={handleAddTask} className="space-y-4">
               <select
@@ -484,7 +484,7 @@ export default function TasksPage() {
       {/* Edit Task */}
       {isEditModalOpen && editTask && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md">
+          <div className="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md mx-4 max-h-screen overflow-y-auto">
             <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Edit Task</h2>
             <form onSubmit={handleEditTask} className="space-y-4">
               <select
