@@ -2,7 +2,7 @@
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/your-username/task-management-frontend.git
+   git clone https://github.com/Sirithonk2002/frontend-task.git
    cd frontend
 ```
 2. Install dependencies

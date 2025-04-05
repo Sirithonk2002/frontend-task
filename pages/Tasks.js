@@ -264,17 +264,17 @@ export default function TasksPage() {
 
   return (
     <div
-      className="p-4 sm:p-6 min-h-screen w-full"
+      className="min-h-screen w-full px-4 py-6 sm:px-6 md:px-10 lg:px-20 xl:px-32"
       style={{
         background: "linear-gradient(to bottom right, #FF9999, #FFCCCC, #FFFFFF)",  
       }}
     >
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8">
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#330000]">
           Task Management
         </h1>
-  
-        <div className="flex items-center space-x-4">
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
           {currentUser && (
             <div className="flex items-center gap-2 px-2 py-2 rounded-xl border border-rose-400">
               <FaUser className="text-brown-400" />
@@ -283,7 +283,7 @@ export default function TasksPage() {
               </p>
             </div>
           )}
-  
+
           <button
             onClick={handleLogout}
             className="inline-flex items-center gap-2 px-2 py-2 bg-rose-400 hover:bg-rose-500 text-white font-semibold rounded-xl shadow-sm transition-all cursor-pointer"
@@ -295,7 +295,7 @@ export default function TasksPage() {
           </button>
         </div>
       </div>
-  
+
       {error && <p className="text-red-500 text-center mb-4 font-medium">{error}</p>}
   
       <div className="flex justify-center mb-6">
@@ -308,7 +308,7 @@ export default function TasksPage() {
         </button>
       </div>
   
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-x-auto">
         <DragDropContext onDragEnd={handleDragEnd}>
           {Object.keys(statusMap).map((key) => (
             <Droppable droppableId={key} key={key}>
