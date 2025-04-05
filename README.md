@@ -1,4 +1,7 @@
 
+## Use Vercel for frontend deployment
+https://github.com/Sirithonk2002/frontend-task.git
+
 1. Clone the repository:
 
 ```bash
